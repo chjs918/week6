@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    {{user.location}}에 사는 {{user.university}} 다니는 {{user.nickname}}님 안녕하세요
+    {% endif %}
+    <h1>메모장</h1>
+    <div class="contain">
+    {% for blog in posts %}
+        <div class="flex-container">
+            {%if blog.blog_img %}
+            <div>
+                <img src="{{blog.image_thumbnail.url}}">
+            </div>
+            {%endif%}
+            <div>
+                <h3 class="round">{{blog.blog_title}}</h3>
+                <h5><b>{{blog.blog_writer}}</b></h5>
+                <h6>{{blog.blog_summary}} </h6>
+            </div> 
+        </div>
+        <a href="{%url 'blogdetail' blog.id %}">...more</a>
+        <br>
+        </div>
+    {% endfor %} 
+    </div>
+
+    <br>
+    {% if posts.has_previous %}
+    <a href="?page=1">First</a>
+    <a href="?page={{posts.previous_page_number}}">Previous</a>
+    {% endif %}
+
+    <span>{{posts.number}}</span>
+    <span>of</span>
+    <span>{{posts.paginator.num_pages}}</span>
+
+    {% if posts.has_next %}
+    <a href="?page={{posts.next_page_number}}">Next</a>
+    <a href="?page={{posts.paginator.num_pages}}">Last</a>
+    {% endif %}
+
+    <br> <br>
+    <div>
+        <a href="{%url 'blognew'%}">write new</a>
+    </div>
+{% endblock %}

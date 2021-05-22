@@ -1,0 +1,64 @@
+a:link, a:visited {
+    background: #8F99A6;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: inline-block;
+    border-radius:5px;
+    padding: 10px;
+}
+
+a:hover, a:active {
+     background-color: #D7D7D9;
+}
+
+.round {
+    border-radius:10px 50px 10px 50px; 
+    background-color:#ffffff;
+}
+body {
+    background-color:#ffffff;
+    padding : 5px;
+}
+
+h1 { 
+    padding: 0.43em 1em; 
+    font-size: 19px; 
+    border-radius: 3px; 
+    color: #8697A6;
+}
+
+h3 {
+    background-color: white;
+}
+
+h5 {
+    font-family: serif;
+    color:#858582;
+}
+
+button {
+    background: #adadad;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    border-radius:5px;
+    padding: 10px;
+}
+
+.d1 {
+    color: #858582;
+    font-family:inherit;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+.flex-container > div {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+  }
+
